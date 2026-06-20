@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+    <link rel="shortcut icon" type_="image/ico" href="assets/favicon.ico" />
+    <title>Torrent-Tube</title>
+  </head>
+  <body>
+    <main class="container">
+      <nav>
+        <ul>
+          <li>
+            <strong>Torrent-Tube</strong>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="https://github.com/dessalines/torrent-tube">About</a>
+          </li>
+        </ul>
+      </nav>
+      <p>Enter any youtube URL, to check to see if a torrent of it exists.</p>
+      <form role="search" onSubmit="return redirect();">
+        <input
+          name="search"
+          type="search"
+          id="search"
+          placeholder="Enter a youtube link"
+          required
+          pattern="^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube(?:-nocookie)?\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|live\/|v\/)?)([\w\-]+)(\S+)?$"
+          title="Invalid youtube link"
+        />
+        <input type="submit" value="Search" />
+      </form>
+    </main>
+  </body>
+  <script type="text/javascript">
+    function getId(url) {
+      let regex =
+        /(youtu.*be.*)\/(watch\?v=|embed\/|v|shorts|)(.*?((?=[&#?])|$))/gm;
+      return regex.exec(url)[3];
+    }
+    function redirect() {
+      let searchVal = document.getElementById("search").value;
+      let youtubeId = getId(searchVal);
+      let torrentsCsvLink = `https://torrents-csv.com/search?q=${youtubeId}`;
+      location.href = torrentsCsvLink;
+    }
+  </script>
+</html>
