@@ -1,12 +1,14 @@
 # Torrent-Tube
 
-Torrent-Tube is a group of tools to help decentralize YouTube videos, by moving them to torrents, which can be shared by many people. It includes:
+Torrent-Tube is a set of tools to help decentralize YouTube videos, by moving them to torrents, which can be shared by many people. It includes:
 
-- A [Torrent-Tube search site](https://dessalines.github.io/torrent-tube) which forwards YouTube links to the [Torrents-csv](https://torrents-csv.com) search engine, to see if the given YouTube video already exists, and is being seeded.
-- A script to download, and create torrent files from YouTube videos, with a uniform naming style.
-- You will need to upload these torrent files yourself to a service (details below).
+- A [Torrent-Tube search site](https://dessalines.github.io/torrent-tube) which searches the [Torrents-csv](https://torrents-csv.com) search engine to see if the given YouTube video already exists, and is being seeded.
+- A script to download, and create torrent files from YouTube videos, with a uniform naming style and format, taken from [TheFrenchGhosty's YouTube-DL-Scripts](https://github.com/TheFrenchGhosty/TheFrenchGhostys-Ultimate-YouTube-DL-Scripts-Collection).
+- You will need to upload these torrent files yourself to a service (details below), and seed them.
 
 [Torrent-Tube Search](https://dessalines.github.io/torrent-tube/)
+
+In the future, it may be possible to create a browser plugin that checks a video link that you're currently watching for existing torrents.
 
 ## Create torrent script
 
@@ -33,7 +35,3 @@ The video will download, and is saved in the `videos` folder. The torrent file i
 Add the torrent to your torrent app, such as [qbittorrent](https://www.qbittorrent.org/).
 
 Upload the torrent file to a torrent index site, such as thepiratebay, 1337x, or follow [these instructions to add it to torrents-csv](https://codeberg.org/heretic/torrents-csv-data).
-
-```
-
-```
