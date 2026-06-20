@@ -18,9 +18,22 @@ Torrent-Tube is a group of tools to help decentralize YouTube videos, by moving 
 
 ### Instructions
 
-- Copy a YouTube video URL.
-- Run `./create_torrent.sh [YOUTUBE_URL]`
-- The video will download, and is saved in the `videos` folder.
-- The torrent file is saved in the `torrents` folder.
-- Add the torrent to your torrent app, such as [qbittorrent](https://www.qbittorrent.org/)
-- Upload the torrent file to a torrent index site, such as thepiratebay, 1337x, or follow [these instructions to add it to torrents-csv](https://codeberg.org/heretic/torrents-csv-data).
+Copy a YouTube video URL.
+
+```sh
+# Clone this repo
+git clone https://github.com/dessalines/torrent-tube
+
+# Run the script
+./create_torrent.sh [YOUTUBE_URL]
+```
+
+The video will download, and is saved in the `videos` folder. The torrent file is saved in the `torrents` folder.
+
+Add the torrent to your torrent app, such as [qbittorrent](https://www.qbittorrent.org/).
+
+Upload the torrent file to a torrent index site, such as thepiratebay, 1337x, or follow [these instructions to add it to torrents-csv](https://codeberg.org/heretic/torrents-csv-data).
+
+```
+
+```
