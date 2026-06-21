@@ -4,7 +4,7 @@ Torrent-Tube is a set of tools to help decentralize YouTube videos, by moving th
 
 - A [Torrent-Tube search site](https://dessalines.github.io/torrent-tube) which searches the [Torrents-csv](https://torrents-csv.com) search engine to see if the given YouTube video already exists, and is being seeded.
   - It does this by extracting the YouTube [VIDEO_ID] from a link, which you can also do manually if you like (IE, the text after `watch?v=...`).
-- A script to download, and create torrent files from YouTube videos, with a uniform naming style and format, taken from [TheFrenchGhosty's YouTube-DL-Scripts](https://github.com/TheFrenchGhosty/TheFrenchGhostys-Ultimate-YouTube-DL-Scripts-Collection).
+- A script to check for previously made torrents, and if there are none, then download, and create torrent files from YouTube videos, with a uniform naming style and format, taken from [TheFrenchGhosty's YouTube-DL-Scripts](https://github.com/TheFrenchGhosty/TheFrenchGhostys-Ultimate-YouTube-DL-Scripts-Collection).
 - You will need to upload these torrent files yourself to a service (details below), and seed them.
 
 [Torrent-Tube Search](https://dessalines.github.io/torrent-tube/)
@@ -17,6 +17,7 @@ In the future, it may be possible to create a browser plugin that checks a video
 
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp)
 - [mktorrent](https://github.com/pobrn/mktorrent)
+- [jq](https://jqlang.org/)
 - wget
 
 ### Instructions
