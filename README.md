@@ -25,7 +25,8 @@ In the future, it may be possible to create a browser plugin that checks a video
 1. Copy a YouTube video URL.
 2. Clone the repo: `git clone https://github.com/dessalines/torrent-tube && cd torrent-tube`
 3. Run the script: `./create_torrent.sh "[YOUTUBE_URL]"`
-   The video will download, and is saved in the `videos` folder. The torrent file is saved in the `torrents` folder.
+   The video will download, and is saved in the `videos` folder. The torrent file is saved in the `torrents` folder.\
+   The output is a folder with the `mkv`, a cover image, and metadata, named `[YouTube] [%(id)s] %(uploader)s - %(upload_date)s - %(title)`.
 4. Add the torrent to your torrent app, such as [qbittorrent](https://www.qbittorrent.org/).
 5. To add a torrent to torrents-csv, open up an [issue in torrents-csv](https://codeberg.org/heretic/torrents-csv-data/issues/new?title=Torrent%20request), with the torrent name and magnet link. Make sure it has `[YouTube] [VIDEO_ID]` in the title. \
    Or you can upload the torrent file to a torrent index site, such as thepiratebay, 1337x, or follow [these instructions to add it to torrents-csv](https://codeberg.org/heretic/torrents-csv-data).
