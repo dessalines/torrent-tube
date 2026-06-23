@@ -6,10 +6,18 @@ Torrent-Tube is a set of tools to help decentralize YouTube videos, by moving th
   - It does this by extracting the YouTube [VIDEO_ID] from a link, which you can also do manually if you like (IE, the text after `watch?v=...`).
 - A script to check for previously made torrents, and if there are none, then download, and create torrent files from YouTube videos, with a uniform naming style and format, taken from [TheFrenchGhosty's YouTube-DL-Scripts](https://github.com/TheFrenchGhosty/TheFrenchGhostys-Ultimate-YouTube-DL-Scripts-Collection).
 - You will need to upload these torrent files yourself to a service (details below), and seed them.
+- You can also post these videos to [lemmy.ml/c/torrenttube](https://lemmy.ml/c/torrenttube), with the magnet link as the URL, and a `webp` video thumbnail contained in the `videos/MY_VIDEO` folder.
+
+[lemmy.ml Torrent-Tube community](https://lemmy.ml/c/torrenttube)
 
 [Torrent-Tube Search](https://dessalines.github.io/torrent-tube/)
 
-In the future, it may be possible to create a browser plugin that checks a video link that you're currently watching for existing torrents.
+[Torrents-CSV Search](https://)
+
+## Future plans
+
+- Create a browser plugin that checks a video link that you're currently watching for existing torrents.
+- Create a UI for viewing these additions. (The lemmy.ml community works for now)
 
 ## Create torrent script
 
@@ -30,3 +38,4 @@ In the future, it may be possible to create a browser plugin that checks a video
 4. Add the torrent to your torrent app, such as [qbittorrent](https://www.qbittorrent.org/).
 5. To add a torrent to torrents-csv, open up an [issue in torrents-csv](https://codeberg.org/heretic/torrents-csv-data/issues/new?title=Torrent%20request), with the torrent name and magnet link. Make sure it has `[YouTube] [VIDEO_ID]` in the title. \
    Or you can upload the torrent file to a torrent index site, such as thepiratebay, 1337x, or follow [these instructions to add it to torrents-csv](https://codeberg.org/heretic/torrents-csv-data).
+6. Post your torrent to [lemmy.ml/c/torrenttube](https://lemmy.ml/c/torrenttube), with the magnet link as the URL, and a `webp` video thumbnail contained in the `videos/MY_VIDEO` folder.
