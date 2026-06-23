@@ -8,6 +8,8 @@ Torrent-Tube is a set of tools to help decentralize YouTube videos, by moving th
 - You will need to upload these torrent files yourself to a service (details below), and seed them.
 - You can also post these videos to [lemmy.ml/c/torrenttube](https://lemmy.ml/c/torrenttube), with the magnet link as the URL, and a video thumbnail contained in the `videos` folder.
 
+[lemmy.ml Torrent-Tube community](https://lemmy.ml/c/torrenttube)
+
 [Torrent-Tube Search](https://dessalines.github.io/torrent-tube/)
 
 [Torrents-CSV Search](https://)
