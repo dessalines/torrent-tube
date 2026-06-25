@@ -93,14 +93,12 @@ async fn main() -> Result<()> {
 
   let thumbnail = metadata_json
     .get("thumbnail")
-    .map(Value::as_str)
-    .flatten()
+    .and_then(Value::as_str)
     .map(str::to_owned);
 
   let description = metadata_json
     .get("description")
-    .map(Value::as_str)
-    .flatten()
+    .and_then(Value::as_str)
     .map(str::to_owned);
 
   // Login to lemmy
