@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+# Import the env vars from .env
+export $(xargs <.env)
+
 # Check to see if the torrent exists
 
 # Extract the youtube video id
@@ -36,3 +39,22 @@ trackers=$(wget -qO- https://raw.githubusercontent.com/ngosang/trackerslist/mast
 # Create the torrent
 cd ../torrents
 mktorrent -a "$trackers" "../videos/$output_folder"
+
+# If your 2nd arg is post-to-lemmy, then run the following
+if [ "$2" == "post-to-lemmy" ]; then
+  cd ../post-to-lemmy
+  metadata_file=$(ls "../videos/${output_folder}"*.json)
+  torrent_file=../torrents/${output_folder::-1}.torrent
+  echo "Posting to lemmy..."
+  echo "------------------"
+  echo "Metadata file: $metadata_file"
+  echo "Torrent file: $torrent_file"
+
+  cargo run -- \
+    --metadata_file "$metadata_file" \
+    --torrent_file "$torrent_file" \
+    --lemmy_server $LEMMY_SERVER \
+    --lemmy_community $LEMMY_COMMUNITY_NAME \
+    --lemmy_username $LEMMY_USER \
+    --lemmy_password $LEMMY_PASSWORD
+fi

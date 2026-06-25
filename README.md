@@ -38,4 +38,30 @@ Torrent-Tube is a set of tools to help decentralize YouTube videos, by moving th
 4. Add the torrent to your torrent app, such as [qbittorrent](https://www.qbittorrent.org/).
 5. To add a torrent to torrents-csv, open up an [issue in torrents-csv](https://codeberg.org/heretic/torrents-csv-data/issues/new?title=Torrent%20request), with the torrent name and magnet link. Make sure it has `[YouTube] [VIDEO_ID]` in the title. \
    Or you can upload the torrent file to a torrent index site, such as thepiratebay, 1337x, or follow [these instructions to add it to torrents-csv](https://codeberg.org/heretic/torrents-csv-data).
-6. Post your torrent to [lemmy.ml/c/torrenttube](https://lemmy.ml/c/torrenttube), with the magnet link as the URL, and a `webp` video thumbnail contained in the `videos/MY_VIDEO` folder.
+6. Post your torrent to [lemmy.ml/c/torrenttube](https://lemmy.ml/c/torrenttube), with the magnet link as the URL, and a `webp` video thumbnail contained in the `videos/MY_VIDEO` folder, or use the instructions in the script below.
+
+## Post-to-lemmy tool
+
+### Requirements
+
+- Rust
+
+### Instructions
+
+This tool helps helps automate posting of torrent-tube torrents to any given lemmy community of your choosing, along with its thumbnail and description.
+
+If you'd like to use this automatically, edit the vars in `.env`, then run:
+
+`./create_torrent.sh 'youtube_url' post-to-lemmy`
+
+### Manual usage
+
+```sh
+cargo run -- \
+--metadata_file '$metadata_file' \
+--torrent_file '$torrent_file' \
+--lemmy_server LEMMY.TLD \
+--lemmy_community COMMUNITY_NAME \
+--lemmy_username MY_USER \
+--lemmy_password MY_PASSWORD
+```
