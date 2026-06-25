@@ -49,6 +49,7 @@ steps:
     image: *rust_image
     commands:
       - rustup component add clippy
+      - apt update && apt install pkg-config libssl-dev -y
       - cd post-to-lemmy
       - cargo clippy --tests --all-targets -- -D warnings
     when:
