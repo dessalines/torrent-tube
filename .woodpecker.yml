@@ -1,3 +1,8 @@
+variables:
+  - &rust_image "rust:1.96-slim-bookworm"
+  - &rust_nightly_image "rustlang/rust:nightly-alpine"
+  - &install_binstall "wget -q -O- https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-unknown-linux-musl.tgz | tar -xvz -C /usr/local/cargo/bin"
+
 steps:
   prettier_check:
     image: jauderho/prettier:3.8.4-alpine
@@ -11,5 +16,37 @@ steps:
     commands:
       - apk add shfmt
       - shfmt -i 2 -d *.sh
+    when:
+      - event: pull_request
+
+  toml_fmt:
+    image: ghcr.io/shaddydc/taplo
+    commands:
+      - taplo format --check
+    when:
+      - event: pull_request
+
+  cargo_fmt:
+    image: *rust_nightly_image
+    commands:
+      - rustup component add rustfmt --toolchain nightly
+      - cargo +nightly fmt -- --check
+    when:
+      - event: pull_request
+
+  cargo_shear:
+    image: *rust_nightly_image
+    commands:
+      - *install_binstall
+      - cargo binstall -y cargo-shear --disable-strategies compile
+      - cargo shear --deny-warnings
+    when:
+      - event: pull_request
+
+  cargo_clippy:
+    image: *rust_image
+    commands:
+      - rustup component add clippy
+      - cargo clippy --tests --all-targets -- -D warnings
     when:
       - event: pull_request
