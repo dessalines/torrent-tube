@@ -1,10 +1,10 @@
-use anyhow::{anyhow, Context, Result};
+use anyhow::{Context, Result, anyhow};
 use clap::{Arg, ArgMatches, Command};
 use lava_torrent::torrent::v1::Torrent;
 use lemmy_client::{
-  lemmy_api_common::{community::GetCommunity, person::Login, post::CreatePost},
   ClientOptions,
   LemmyClient,
+  lemmy_api_common::{community::GetCommunity, person::Login, post::CreatePost},
 };
 use serde_json::Value;
 use std::{fs, path::Path};
